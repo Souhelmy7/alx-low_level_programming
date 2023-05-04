@@ -1,22 +1,25 @@
 #include "main.h"
 /**
-* _strncat - concatenate two strings
+* _strncpy - a function that copies a string.
 * @dest: input value
 * @src: input value
 * @n: input value
 * Return: dest
 */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-int in = 0;
-int len = 0;
-while (dest[in++])
+int a;
+a = 0;
+while (a < n && src[a] != '\0')
 {
-len++;
+dest[a] = src[a];
+a++;
 }
-for (in = 0; src[in] && in < n; in++)
+while (a < n)
 {
-dest[len++] = src[in];
+dest[a] = '\0';
+a++;
 }
 return (dest);
+}
 }
